@@ -58,7 +58,7 @@ select count(distinct building_id) from building_temperature;
 --빌딩 1의 평균 온도보다 같거나 높았던 빌딩을 모두 출력
 select * from building_temperature where `temperature` >= (select avg(`temperature`) from building_temperature where `building_id` = 1);
 
-select * from building_temperature where `temperature` >= (select avg(`temperature`) from building_temperature where `building_id` = 1) and `building_id <> 1;
+select * from building_temperature where `temperature` >= (select avg(`temperature`) from building_temperature where `building_id` = 1) and `building_id != 1;
 
 -- -----------------------------------
 

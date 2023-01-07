@@ -64,16 +64,16 @@ select * from building_temperature where `temperature` >= (select avg(`temperatu
 
 --group by
 --빌딩별로 평균온도 출력
-select building_id, avg(temperature) from building_temperature; -- 전체 평균 하나만 반환
-select building_id, avg(temperature) from building_temperature group by `building_id`; -- 그룹별로 묶어서 평균 반환
+select `building_id`, `avg(temperature)` from building_temperature; -- 전체 평균 하나만 반환
+select `building_id`, `avg(temperature)` from building_temperature group by `building_id`; -- 그룹별로 묶어서 평균 반환
 
 --having : aggregate function이 들어간 조건
 --where에서는 aggregate function 사용이 어려움
 
 --ex)평균 온도가 12도보다 높았던 빌딩 번호
-select building_id, avg(temperature from building_temperature group by `building_id` having avg(`temperature`) ? 12.0;
+select `building_id`, `avg(temperature` from building_temperature group by `building_id` having avg(`temperature`) ? 12.0;
 
-select building_id, avg(temperature from building_temperature group by `building_id` with rollup;
+select `building_id`, `avg(temperature` from building_temperature group by `building_id` with rollup;
 --전체평균도 반환함
 
 --------------------------------

@@ -60,7 +60,7 @@ select * from building_temperature where `temperature` >= (select avg(`temperatu
 
 select * from building_temperature where `temperature` >= (select avg(`temperature`) from building_temperature where `building_id` = 1) and `building_id <> 1;
 
--------------------------------------
+-- -----------------------------------
 
 --group by
 --빌딩별로 평균온도 출력
